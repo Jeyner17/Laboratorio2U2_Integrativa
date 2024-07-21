@@ -11,16 +11,15 @@
 </head>
 
 <body>
+   <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <img [src]="img" class="img" alt="Logo ESPE" width="100 px" height="100 px">
-                <h1 class="titulo"> Entrega de deberes </h1>
+            <div class="col-md-12 text-center">
+                <img [src]="img" class="img" alt="Logo ESPE"  >
                 <!--INTERPOLACIÓN-->
                 <h2 class="uni">{{ universidad }}</h2>
                 <h3 class="uni">{{cadena1}}</h3>
                 <!--BINDING DE PROPIEDAD-->
-                
             </div>
             <div class="col-md-12">
                 <label for="nombre">Nombre del estudiante:</label>
@@ -29,23 +28,22 @@
                 <label for="apellido">Apellido del estudiante:</label>
                 <!--BINDING DE DOBLE VÍA-->
                 <input type="text" id="apellido" class="form-control" [(ngModel)]="apeliido">
-                <label for="apellido">Edad del estudiante:</label>
+                <label for="edad">Edad del estudiante:</label>
                 <!--BINDING DE DOBLE VÍA-->
                 <input type="text" id="edad" class="form-control" [(ngModel)]="edad">
             </div>
             <div class="col-md-12">
-                <label for="carreras">Selecciona una carrera: </label> <br>
+                <label for="carreras">Selecciona una carrera: </label><br>
                 <!--BINDING DE DOBLE VÍA-->
                 <select id="carreras" class="form-select" [(ngModel)]="seleccion">
-                    <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la
-                        Información</option>
+                    <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la Información</option>
                     <option value="Ingeniería Agropecuaría">Ingeniería Agropecuaría</option>
                     <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
                 </select>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <!--BINDING DE EVENTO-->
-                <button class="btn btn-primary mt-3" (click)="onClick()">Verificar Datos</button>
+                <button class="btn btn-primary mt-3" (click)="onClick()">Ingresar</button>
             </div>
         </div>
     </div>

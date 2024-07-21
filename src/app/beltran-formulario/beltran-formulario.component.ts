@@ -15,7 +15,7 @@ export class BeltranFormularioComponent {
   universidad = 'Universidad de las Fuerzas Armadas - ESPE';
   cadena1="Ingreso de Estudiantes";
   seleccion= '';
-  img = '../../logo_espe.png';
+  img = '../../logo_espe_2.png';
 
   onClick() {
     alert(`Bienvenido ${this.estudiante} ${this.apeliido} a la ${this.universidad}, 
