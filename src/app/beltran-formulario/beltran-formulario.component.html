@@ -11,42 +11,47 @@
 </head>
 
 <body>
-   <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <img [src]="img" class="img" alt="Logo ESPE"  >
-                <!--INTERPOLACIÓN-->
-                <h2 class="uni">{{ universidad }}</h2>
-                <h3 class="uni">{{cadena1}}</h3>
-                <!--BINDING DE PROPIEDAD-->
-            </div>
-            <div class="col-md-12">
-                <label for="nombre">Nombre del estudiante:</label>
-                <!--BINDING DE DOBLE VÍA-->
-                <input type="text" id="nombre" class="form-control" [(ngModel)]="estudiante">
-                <label for="apellido">Apellido del estudiante:</label>
-                <!--BINDING DE DOBLE VÍA-->
-                <input type="text" id="apellido" class="form-control" [(ngModel)]="apeliido">
-                <label for="edad">Edad del estudiante:</label>
-                <!--BINDING DE DOBLE VÍA-->
-                <input type="text" id="edad" class="form-control" [(ngModel)]="edad">
-            </div>
-            <div class="col-md-12">
-                <label for="carreras">Selecciona una carrera: </label><br>
-                <!--BINDING DE DOBLE VÍA-->
-                <select id="carreras" class="form-select" [(ngModel)]="seleccion">
-                    <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la Información</option>
-                    <option value="Ingeniería Agropecuaría">Ingeniería Agropecuaría</option>
-                    <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
-                </select>
-            </div>
-            <div class="col-md-12 text-center">
-                <!--BINDING DE EVENTO-->
-                <button class="btn btn-primary mt-3" (click)="onClick()">Ingresar</button>
-            </div>
-        </div>
+  <!-- beltran-formulario.component.html -->
+<div class="container" *ngIf="!mostrarDetalles">
+  <!-- Formulario de ingreso -->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <img [src]="img" class="img" alt="Logo ESPE">
+      <h2 class="uni">{{ universidad }}</h2>
+      <h3 class="uni">{{ cadena1 }}</h3>
     </div>
+    <div class="col-md-12">
+      <label for="nombre">Nombre del estudiante:</label>
+      <input type="text" id="nombre" class="form-control" [(ngModel)]="estudiante">
+      <label for="apellido">Apellido del estudiante:</label>
+      <input type="text" id="apellido" class="form-control" [(ngModel)]="apellido">
+      <label for="edad">Edad del estudiante:</label>
+      <input type="text" id="edad" class="form-control" [(ngModel)]="edad">
+      <label for="foto">Foto del estudiante:</label>
+      <input type="file" id="foto" class="form-control" (change)="onFileChange($event)">
+    </div>
+    <div class="col-md-12">
+      <label for="carreras">Selecciona una carrera: </label>
+      <select id="carreras" class="form-select" [(ngModel)]="seleccion">
+        <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la Información</option>
+        <option value="Ingeniería Agropecuaría">Ingeniería Agropecuaría</option>
+        <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
+      </select>
+    </div>
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary mt-3" (click)="onClick()">Ingresar</button>
+    </div>
+  </div>
+</div>
+<app-manzaba-detalle-estudiante *ngIf="mostrarDetalles"
+  [estudiante]="estudiante"
+  [apellido]="apellido"
+  [edad]="edad"
+  [universidad]="universidad"
+  [carrera]="seleccion"
+  [foto]="fotoEstudiante">
+</app-manzaba-detalle-estudiante>
+
 </body>
 
 </html>
