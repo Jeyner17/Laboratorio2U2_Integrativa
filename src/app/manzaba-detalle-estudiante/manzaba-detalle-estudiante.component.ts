@@ -23,6 +23,6 @@ export class ManzabaDetalleEstudianteComponent {
       'Ingeniería en Biotecnología': 'Malla curricular para Ingeniería en Biotecnología'
     };
     alert(mallas[this.carrera]);
-    // Aqui va tu logica, o bueno la de ChatGPT jajajajajajajajajaja
+    // Aqui va tu logica, o bueno la de ChatGPT jajajaj
   }
 }
