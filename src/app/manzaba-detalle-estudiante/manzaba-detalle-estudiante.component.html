@@ -6,5 +6,10 @@
   <p><strong>Edad:</strong> {{ edad }}</p>
   <p><strong>Universidad:</strong> {{ universidad }}</p>
   <p><strong>Carrera:</strong> {{ carrera }}</p>
-  <button class="btn btn-info" (click)="mostrarMallaCurricular()">Ver Malla Curricular</button>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <app-carrera [seleccion]="carrera"></app-carrera>
+    </div>
+  </div>
 </div>
+

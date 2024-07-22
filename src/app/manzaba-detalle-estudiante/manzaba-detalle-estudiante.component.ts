@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { CarreraComponent } from '../carreras/carreras.component';
 
 @Component({
   selector: 'app-manzaba-detalle-estudiante',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,CarreraComponent],
   templateUrl: './manzaba-detalle-estudiante.component.html',
   styleUrl: './manzaba-detalle-estudiante.component.css'
 })
@@ -23,6 +24,5 @@ export class ManzabaDetalleEstudianteComponent {
       'Ingeniería en Biotecnología': 'Malla curricular para Ingeniería en Biotecnología'
     };
     alert(mallas[this.carrera]);
-    // Aqui va tu logica, o bueno la de ChatGPT jajajaj
   }
 }
